@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - Alfajir Secondary School</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #004080; color: white; padding: 10px; text-align: center; }
+        nav ul { list-style-type: none; padding: 0; margin: 0; background-color: #004080; overflow: hidden; }
+        nav ul li { display: inline; }
+        nav ul li a { color: white; text-decoration: none; padding: 14px 20px; display: inline-block; }
+        nav ul li a:hover { background-color: #002040; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .login-form, .dashboard { display: none; }
+        footer { background-color: #002040; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table, th, td { border: 1px solid #ddd; }
+        th, td { padding: 10px; text-align: left; }
+        button { background-color: #004080; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #002040; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alfajir Secondary School - Student Portal</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+        </ul>
+    </nav>
+    <div class="container login-form" id="loginForm">
+        <h2>Student Login</h2>
+        <form>
+            <label for="username">Username or Email:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="button" onclick="showDashboard()">Login</button>
+            <p><a href="#">Forgot Password?</a></p>
+        </form>
+    </div>
+    <div class="container dashboard" id="dashboard">
+        <h2>Student Dashboard</h2>
+        <h3>Welcome, [Student Name]</h3>
+        <ul>
+            <li><b>Academic Records:</b> View grades and download transcripts.</li>
+            <li><b>Assignments:</b> Submit assignments and view feedback.</li>
+            <li><b>Attendance:</b> Track attendance records.</li>
+            <li><b>Timetable:</b> Check your class schedule.</li>
+            <li><b>Announcements:</b> Stay updated on school news and events.</li>
+            <li><b>Study Materials:</b> Access e-books and resources.</li>
+            <li><b>Exams:</b> View exam dates and results.</li>
+            <li><b>Online Learning:</b> Participate in quizzes, live classes, and forums.</li>
+            <li><b>Profile Settings:</b> Update your personal details and change your password.</li>
+            <li><b>Fee Payment Records:</b> Check your payment history.</li>
+        </ul>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <footer>
+        &copy; 2025 Alfajir Secondary School
+    </footer>
+    <script>
+        // Show login form initially
+        document.getElementById('loginForm').style.display = 'block';
+
+        // Function to show the dashboard
+        function showDashboard() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+        }
+
+        // Function to log out
+        function logout() {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
